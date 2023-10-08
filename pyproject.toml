@@ -1,0 +1,53 @@
+[tool.poetry]
+name = "telebot_easy_words"
+version = "0.1.0"
+description = ""
+authors = ["Stefan <epiktetov.sv@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+aiogram = "^3.1.1"
+python-dotenv = "^1.0.0"
+
+[tool.poetry.dev-dependencies]
+flake8 = "^6.1.0"
+Flake8-pyproject = "^1.2.3"
+mypy = "^1.5.1"
+isort = "^5.12.0"
+black = "^23.9.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.flake8]
+max-line-length = 120
+count = true
+ignore = ['E203']
+
+[tool.mypy]
+follow_imports = "silent"
+strict_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+disallow_any_generics = true
+check_untyped_defs = true
+no_implicit_reexport = true
+disallow_untyped_defs = true
+ignore_missing_imports = true
+
+[tool.isort]
+profile = "black"
+
+[tool.black]
+line-length = 120
+target-version = ['py310']
+include = '\.pyi?$'
+exclude = '''
+
+(
+  /(
+    | \.mypy_cache
+  )/
+)
+'''
